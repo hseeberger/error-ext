@@ -1,0 +1,18 @@
+[package]
+name          = "axum-handler-error"
+version       = "0.1.0"
+edition       = "2021"
+description   = "Errors that can be used as response in axum."
+authors       = [ "Heiko Seeberger <git@heikoseeberger.de>" ]
+license-file  = "LICENSE"
+readme        = "README.md"
+homepage      = "https://github.com/hseeberger/axum-handler-error"
+repository    = "https://github.com/hseeberger/axum-handler-error"
+documentation = "https://docs.rs/configured/latest/axum-handler-error"
+
+[dependencies]
+axum = { version = "0.7" }
+
+[dev-dependencies]
+anyhow    = { version = "1.0" }
+thiserror = { version = "1.0" }
