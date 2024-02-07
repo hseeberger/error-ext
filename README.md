@@ -8,7 +8,9 @@
 [build-badge]: https://img.shields.io/github/actions/workflow/status/hseeberger/error-ext/ci.yaml
 [build-url]: https://github.com/hseeberger/error-ext/actions/workflows/ci.yaml
 
-Error utilities.
+Error utilities:
+- `StdErrorExt` provides `as_chain` and `into_boxed` extension methods.
+- The `axum` module provides an `Error` type that can be used as axum response.
 
 ## License ##
 
