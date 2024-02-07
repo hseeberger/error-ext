@@ -1,17 +1,21 @@
 [package]
-name          = "axum-handler-error"
+name          = "error-ext"
 version       = "0.1.0"
 edition       = "2021"
-description   = "Errors that can be used as response in axum."
+description   = "Error utilities."
 authors       = [ "Heiko Seeberger <git@heikoseeberger.de>" ]
 license-file  = "LICENSE"
 readme        = "README.md"
-homepage      = "https://github.com/hseeberger/axum-handler-error"
-repository    = "https://github.com/hseeberger/axum-handler-error"
-documentation = "https://docs.rs/configured/latest/axum-handler-error"
+homepage      = "https://github.com/hseeberger/error-ext"
+repository    = "https://github.com/hseeberger/error-ext"
+documentation = "https://docs.rs/configured/latest/error-ext"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = [ "--cfg", "docsrs" ]
 
 [dependencies]
-axum = { version = "0.7" }
+axum = { version = "0.7", optional = true }
 
 [dev-dependencies]
 anyhow    = { version = "1.0" }

@@ -1,182 +1,75 @@
-use axum::{
-    http::StatusCode,
-    response::{IntoResponse, Response},
-    Json,
-};
+#![cfg_attr(docsrs, feature(doc_cfg))]
 
-/// Error that can be used as axum response, with an appropriate HTTP status code and – except for
-/// `Internal` – with one or more error messages conveyed as a JSON string array.
-pub enum Error {
-    /// `400 Bad Request`, e.g. because of invalid path or query arguments.
-    InvalidArgs(Vec<String>),
+//! Error utilities.
 
-    /// `404 Not Found`.
-    NotFound(String),
+#[cfg(feature = "axum")]
+#[cfg_attr(docsrs, doc(cfg(feature = "axum")))]
+pub mod axum;
 
-    /// `409 Conflict`, e.g. because of an already existing resource.
-    Conflict(String),
+use std::error::Error as StdError;
 
-    /// `422 Unprocessable Entity`, e.g. because of the JSON payload could not be parsed.
-    InvalidEntity(Vec<String>),
+/// Convenience for `async` and `anyhow` friendly dynamic error
+/// `Box<dyn std::error::Error + Send + Sync + 'static>`.
+pub type BoxError = Box<dyn StdError + Send + Sync + 'static>;
 
-    /// `500 Internal Server Error`.
-    Internal,
-}
+pub trait StdErrorExt
+where
+    Self: StdError,
+{
+    /// Format this error as a chain of colon separated strings built from this error and all
+    /// recursive sources.
+    ///
+    /// Can be used to log errors like this:
+    ///
+    /// `error!(error = error.as_chain(), "cannot do this or that");`
+    fn as_chain(&self) -> String {
+        let mut sources = vec![];
+        sources.push(self.to_string());
 
-impl Error {
-    /// Create [Error::InvalidArgs] with the given error.
-    pub fn invalid_args<T>(error: T) -> Self
-    where
-        T: ToString,
-    {
-        let errors = vec![error.to_string()];
-        Error::InvalidArgs(errors)
-    }
-
-    /// Create [Error::InvalidArgs] with the given errors.
-    pub fn invalid_args_all<I, T>(errors: I) -> Self
-    where
-        I: IntoIterator<Item = T>,
-        T: ToString,
-    {
-        let errors = errors.into_iter().map(|e| e.to_string()).collect();
-        Error::InvalidArgs(errors)
-    }
-
-    /// Create [Error::NotFound] with the given error.
-    pub fn not_found<T>(error: T) -> Self
-    where
-        T: ToString,
-    {
-        Error::NotFound(error.to_string())
-    }
-
-    /// Create [Error::Conflict] with the given error.
-    pub fn conflict<T>(error: T) -> Self
-    where
-        T: ToString,
-    {
-        Error::Conflict(error.to_string())
-    }
-
-    /// Create [Error::InvalidEntity] with the given error.
-    pub fn invalid_entity<T>(error: T) -> Self
-    where
-        T: ToString,
-    {
-        let errors = vec![error.to_string()];
-        Error::InvalidEntity(errors)
-    }
-
-    /// Create [Error::InvalidEntity] with the given errors.
-    pub fn invalid_entity_all<I, T>(errors: I) -> Self
-    where
-        I: IntoIterator<Item = T>,
-        T: ToString,
-    {
-        let errors = errors.into_iter().map(|e| e.to_string()).collect();
-        Error::InvalidEntity(errors)
-    }
-}
-
-impl IntoResponse for Error {
-    fn into_response(self) -> Response {
-        match self {
-            Error::InvalidArgs(errors) => {
-                let errors = Json(
-                    errors
-                        .into_iter()
-                        .map(|e| e.to_string())
-                        .collect::<Vec<_>>(),
-                );
-                (StatusCode::BAD_REQUEST, errors).into_response()
-            }
-
-            Error::NotFound(error) => {
-                let errors = Json(vec![error.to_string()]);
-                (StatusCode::NOT_FOUND, errors).into_response()
-            }
-
-            Error::Conflict(error) => {
-                let errors = Json(vec![error.to_string()]);
-                (StatusCode::CONFLICT, errors).into_response()
-            }
-
-            Error::InvalidEntity(errors) => {
-                let errors = Json(
-                    errors
-                        .into_iter()
-                        .map(|e| e.to_string())
-                        .collect::<Vec<_>>(),
-                );
-                (StatusCode::UNPROCESSABLE_ENTITY, errors).into_response()
-            }
-
-            Error::Internal => StatusCode::INTERNAL_SERVER_ERROR.into_response(),
+        let mut source = self.source();
+        while let Some(s) = source {
+            sources.push(s.to_string());
+            source = s.source();
         }
+
+        sources.join(": ")
+    }
+
+    /// Converts this error – given it implements `Sized` + `Send` +`Sync` and `'static` – into a
+    /// [BoxError].
+    fn into_boxed(self) -> BoxError
+    where
+        Self: Sized + Send + Sync + 'static,
+    {
+        self.into()
     }
 }
+
+impl<T> StdErrorExt for T where T: StdError {}
 
 #[cfg(test)]
 mod tests {
     use super::*;
-    use anyhow::anyhow;
-    use std::iter;
     use thiserror::Error;
 
     #[derive(Debug, Error)]
-    #[error("test")]
-    struct TestError;
+    #[error("outer")]
+    struct Outer(#[source] Inner);
+
+    #[derive(Debug, Error)]
+    #[error("inner")]
+    struct Inner;
 
     #[test]
-    fn test_invalid_args() {
-        Error::invalid_args("test").into_response();
-        Error::invalid_args(anyhow!("test")).into_response();
-        let response = Error::invalid_args(TestError).into_response();
-        assert_eq!(response.status(), StatusCode::BAD_REQUEST);
+    fn test_as_chain() {
+        let error = Outer(Inner);
+        assert_eq!(error.as_chain(), "outer: inner");
     }
 
     #[test]
-    fn test_invalid_args_all() {
-        Error::invalid_args_all(vec!["test"]).into_response();
-        let response = Error::invalid_args_all(iter::once(TestError)).into_response();
-        assert_eq!(response.status(), StatusCode::BAD_REQUEST);
-    }
-
-    #[test]
-    fn test_not_found() {
-        Error::not_found("test").into_response();
-        Error::not_found(anyhow!("test")).into_response();
-        let response = Error::not_found(TestError).into_response();
-        assert_eq!(response.status(), StatusCode::NOT_FOUND);
-    }
-
-    #[test]
-    fn test_conflict() {
-        Error::conflict("test").into_response();
-        Error::conflict(anyhow!("test")).into_response();
-        let response = Error::conflict(TestError).into_response();
-        assert_eq!(response.status(), StatusCode::CONFLICT);
-    }
-
-    #[test]
-    fn test_invalid_entity() {
-        Error::invalid_entity("test").into_response();
-        Error::invalid_entity(anyhow!("test")).into_response();
-        let response = Error::invalid_entity(TestError).into_response();
-        assert_eq!(response.status(), StatusCode::UNPROCESSABLE_ENTITY);
-    }
-
-    #[test]
-    fn test_invalid_entity_all() {
-        Error::invalid_entity_all(vec!["test"]).into_response();
-        let response = Error::invalid_entity_all(iter::once(TestError)).into_response();
-        assert_eq!(response.status(), StatusCode::UNPROCESSABLE_ENTITY);
-    }
-
-    #[test]
-    fn test_internal() {
-        let response = Error::Internal.into_response();
-        assert_eq!(response.status(), StatusCode::INTERNAL_SERVER_ERROR);
+    fn test_into_boxed() {
+        let error = Outer(Inner);
+        let error = error.into_boxed();
+        assert_eq!(error.to_string(), "outer");
     }
 }
