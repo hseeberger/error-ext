@@ -23,6 +23,9 @@ pub enum Error {
 
     /// `500 Internal Server Error`.
     Internal,
+
+    /// `503 Internal Server Error`.
+    ServiceUnavailable,
 }
 
 impl Error {
@@ -115,6 +118,8 @@ impl IntoResponse for Error {
             }
 
             Error::Internal => StatusCode::INTERNAL_SERVER_ERROR.into_response(),
+
+            Error::ServiceUnavailable => StatusCode::SERVICE_UNAVAILABLE.into_response(),
         }
     }
 }
