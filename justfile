@@ -3,6 +3,7 @@ set shell := ["bash", "-uc"]
 check:
 	cargo check
 	cargo check --features axum
+	cargo check --features axum,utoipa
 
 fmt toolchain="+nightly":
 	cargo {{toolchain}} fmt
