@@ -16,7 +16,7 @@ rustdoc-args = [ "--cfg", "docsrs" ]
 
 [dependencies]
 axum   = { version = "0.7", optional = true }
-utoipa = { version = "4.1", features = [ "axum_extras" ], optional = true }
+utoipa = { version = "4.2", features = [ "axum_extras" ], optional = true }
 
 [dev-dependencies]
 anyhow    = { version = "1.0" }
