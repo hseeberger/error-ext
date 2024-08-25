@@ -26,7 +26,7 @@ pub enum Error {
     /// `500 Internal Server Error`.
     Internal,
 
-    /// `503 Internal Server Error`.
+    /// `503 Service Unavailable`.
     ServiceUnavailable,
 }
 
