@@ -1,9 +1,9 @@
 set shell := ["bash", "-uc"]
 
 check:
-	cargo check
-	cargo check --features axum
-	cargo check --features axum,utoipa
+	cargo check --tests
+	cargo check --tests --features axum
+	cargo check --tests --features axum,utoipa
 
 fmt toolchain="+nightly":
 	cargo {{toolchain}} fmt
@@ -12,7 +12,9 @@ fmt-check toolchain="+nightly":
 	cargo {{toolchain}} fmt --check
 
 lint:
-	cargo clippy --no-deps --all-features -- -D warnings
+	cargo clippy --tests --no-deps                        -- -D warnings
+	cargo clippy --tests --no-deps --features axum        -- -D warnings
+	cargo clippy --tests --no-deps --features axum,utoipa -- -D warnings
 
 test:
 	cargo test --all-features

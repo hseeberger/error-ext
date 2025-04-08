@@ -9,6 +9,8 @@ on:
   pull_request:
     branches:
       - main
+  schedule:
+    - cron: 0 4/12 * * *
   workflow_dispatch:
     inputs:
       nightly:
@@ -24,7 +26,7 @@ jobs:
   toolchain:
     runs-on: ubuntu-latest
     env:
-      nightly: ${{github.event.inputs.nightly == 'true' && 'true' || ''}}
+      nightly: ${{(github.event.inputs.nightly == 'true' || github.event_name == 'schedule') && 'true' || ''}}
     outputs:
       toolchain: ${{steps.set_toolchain.outputs.toolchain}}
       nightly_toolchain: ${{steps.set_toolchain.outputs.nightly_toolchain}}
@@ -111,6 +113,7 @@ jobs:
         uses: taiki-e/install-action@v2
         with:
           tool: just
+
       - name: Install Rust
         uses: dtolnay/rust-toolchain@master
         with:

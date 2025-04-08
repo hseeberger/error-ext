@@ -12,6 +12,7 @@ use std::error::Error as StdError;
 /// `Box<dyn std::error::Error + Send + Sync + 'static>`.
 pub type BoxError = Box<dyn StdError + Send + Sync + 'static>;
 
+/// Extension methods for std errors.
 pub trait StdErrorExt
 where
     Self: StdError,

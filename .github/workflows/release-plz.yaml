@@ -49,11 +49,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install just
-        uses: taiki-e/install-action@v2
-        with:
-          tool: just
-
       - name: Install Rust
         uses: dtolnay/rust-toolchain@master
         with:

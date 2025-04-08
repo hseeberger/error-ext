@@ -1,9 +1,9 @@
 //! Error utilities for axum.
 
 use axum::{
+    Json,
     http::StatusCode,
     response::{IntoResponse, Response},
-    Json,
 };
 
 /// Error that can be used as axum response, with an appropriate HTTP status code and – except for
@@ -139,46 +139,46 @@ mod tests {
 
     #[test]
     fn test_invalid_args() {
-        Error::invalid_args("test").into_response();
-        Error::invalid_args(anyhow!("test")).into_response();
+        let _ = Error::invalid_args("test").into_response();
+        let _ = Error::invalid_args(anyhow!("test")).into_response();
         let response = Error::invalid_args(TestError).into_response();
         assert_eq!(response.status(), StatusCode::BAD_REQUEST);
     }
 
     #[test]
     fn test_invalid_args_all() {
-        Error::invalid_args_all(vec!["test"]).into_response();
+        let _ = Error::invalid_args_all(vec!["test"]).into_response();
         let response = Error::invalid_args_all(iter::once(TestError)).into_response();
         assert_eq!(response.status(), StatusCode::BAD_REQUEST);
     }
 
     #[test]
     fn test_not_found() {
-        Error::not_found("test").into_response();
-        Error::not_found(anyhow!("test")).into_response();
+        let _ = Error::not_found("test").into_response();
+        let _ = Error::not_found(anyhow!("test")).into_response();
         let response = Error::not_found(TestError).into_response();
         assert_eq!(response.status(), StatusCode::NOT_FOUND);
     }
 
     #[test]
     fn test_conflict() {
-        Error::conflict("test").into_response();
-        Error::conflict(anyhow!("test")).into_response();
+        let _ = Error::conflict("test").into_response();
+        let _ = Error::conflict(anyhow!("test")).into_response();
         let response = Error::conflict(TestError).into_response();
         assert_eq!(response.status(), StatusCode::CONFLICT);
     }
 
     #[test]
     fn test_invalid_entity() {
-        Error::invalid_entity("test").into_response();
-        Error::invalid_entity(anyhow!("test")).into_response();
+        let _ = Error::invalid_entity("test").into_response();
+        let _ = Error::invalid_entity(anyhow!("test")).into_response();
         let response = Error::invalid_entity(TestError).into_response();
         assert_eq!(response.status(), StatusCode::UNPROCESSABLE_ENTITY);
     }
 
     #[test]
     fn test_invalid_entity_all() {
-        Error::invalid_entity_all(vec!["test"]).into_response();
+        let _ = Error::invalid_entity_all(vec!["test"]).into_response();
         let response = Error::invalid_entity_all(iter::once(TestError)).into_response();
         assert_eq!(response.status(), StatusCode::UNPROCESSABLE_ENTITY);
     }
