@@ -8,7 +8,7 @@ license-file  = "LICENSE"
 readme        = "README.md"
 homepage      = "https://github.com/hseeberger/error-ext"
 repository    = "https://github.com/hseeberger/error-ext"
-documentation = "https://docs.rs/configured/latest/error-ext"
+documentation = "https://docs.rs/error-ext/latest/error-ext"
 
 [package.metadata.docs.rs]
 all-features = true
