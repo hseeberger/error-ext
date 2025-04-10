@@ -1,6 +1,6 @@
 [package]
 name          = "error-ext"
-version       = "0.2.5"
+version       = "0.3.0"
 edition       = "2024"
 description   = "Error utilities."
 authors       = [ "Heiko Seeberger <git@heikoseeberger.de>" ]
