@@ -14,6 +14,12 @@ pub enum Error {
     /// `400 Bad Request`, e.g. because of invalid path or query arguments.
     InvalidArgs(Vec<String>),
 
+    /// `401 Unauthorized`
+    Unauthorized,
+
+    /// `403` Forbidden
+    Forbidden,
+
     /// `404 Not Found`.
     NotFound(String),
 
@@ -99,6 +105,10 @@ impl IntoResponse for Error {
                 (StatusCode::BAD_REQUEST, errors).into_response()
             }
 
+            Error::Unauthorized => StatusCode::UNAUTHORIZED.into_response(),
+
+            Error::Forbidden => StatusCode::FORBIDDEN.into_response(),
+
             Error::NotFound(error) => {
                 let errors = Json(vec![error.to_string()]);
                 (StatusCode::NOT_FOUND, errors).into_response()
@@ -150,6 +160,18 @@ mod tests {
         let _ = Error::invalid_args_all(vec!["test"]).into_response();
         let response = Error::invalid_args_all(iter::once(TestError)).into_response();
         assert_eq!(response.status(), StatusCode::BAD_REQUEST);
+    }
+
+    #[test]
+    fn test_unauthorized() {
+        let response = Error::Unauthorized.into_response();
+        assert_eq!(response.status(), StatusCode::UNAUTHORIZED);
+    }
+
+    #[test]
+    fn test_forbidden() {
+        let response = Error::Forbidden.into_response();
+        assert_eq!(response.status(), StatusCode::FORBIDDEN);
     }
 
     #[test]
