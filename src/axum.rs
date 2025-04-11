@@ -14,11 +14,11 @@ pub enum Error {
     /// `400 Bad Request`, e.g. because of invalid path or query arguments.
     InvalidArgs(Vec<String>),
 
-    /// `401 Unauthorized`
-    Unauthorized,
+    /// `401 Unauthorized`.
+    Unauthorized(String),
 
-    /// `403` Forbidden
-    Forbidden,
+    /// `403` Forbidden.
+    Forbidden(String),
 
     /// `404 Not Found`.
     NotFound(String),
@@ -54,6 +54,22 @@ impl Error {
     {
         let errors = errors.into_iter().map(|e| e.to_string()).collect();
         Error::InvalidArgs(errors)
+    }
+
+    /// Create [Error::Unauthorized] with the given error.
+    pub fn unauthorized<T>(error: T) -> Self
+    where
+        T: ToString,
+    {
+        Error::Unauthorized(error.to_string())
+    }
+
+    /// Create [Error::Forbidden] with the given error.
+    pub fn forbidden<T>(error: T) -> Self
+    where
+        T: ToString,
+    {
+        Error::Forbidden(error.to_string())
     }
 
     /// Create [Error::NotFound] with the given error.
@@ -105,9 +121,15 @@ impl IntoResponse for Error {
                 (StatusCode::BAD_REQUEST, errors).into_response()
             }
 
-            Error::Unauthorized => StatusCode::UNAUTHORIZED.into_response(),
+            Error::Unauthorized(error) => {
+                let errors = Json(vec![error.to_string()]);
+                (StatusCode::UNAUTHORIZED, errors).into_response()
+            }
 
-            Error::Forbidden => StatusCode::FORBIDDEN.into_response(),
+            Error::Forbidden(error) => {
+                let errors = Json(vec![error.to_string()]);
+                (StatusCode::FORBIDDEN, errors).into_response()
+            }
 
             Error::NotFound(error) => {
                 let errors = Json(vec![error.to_string()]);
@@ -164,13 +186,13 @@ mod tests {
 
     #[test]
     fn test_unauthorized() {
-        let response = Error::Unauthorized.into_response();
+        let response = Error::unauthorized("test").into_response();
         assert_eq!(response.status(), StatusCode::UNAUTHORIZED);
     }
 
     #[test]
     fn test_forbidden() {
-        let response = Error::Forbidden.into_response();
+        let response = Error::forbidden("test").into_response();
         assert_eq!(response.status(), StatusCode::FORBIDDEN);
     }
 
