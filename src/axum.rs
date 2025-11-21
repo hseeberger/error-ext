@@ -9,7 +9,7 @@ use axum::{
 /// Error that can be used as axum response, with an appropriate HTTP status code and – except for
 /// `Internal` – with one or more error messages conveyed as a JSON string array.
 #[derive(Debug)]
-#[cfg_attr(feature = "utoipa", derive(utoipa::ToSchema))]
+#[cfg_attr(feature = "axum-utoipa", derive(utoipa::ToSchema))]
 pub enum Error {
     /// `400 Bad Request`, e.g. because of invalid path or query arguments.
     InvalidArgs(Vec<String>),

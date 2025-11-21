@@ -1,28 +1,36 @@
 set shell := ["bash", "-uc"]
 
+rust_version := `grep channel rust-toolchain.toml | sed -r 's/channel = "(.*)"/\1/'`
+nightly := "nightly-2025-10-29"
+
 check:
 	cargo check --tests
 	cargo check --tests --features axum
-	cargo check --tests --features axum,utoipa
+	cargo check --tests --features axum,axum-utoipa
 
-fmt toolchain="+nightly":
-	cargo {{toolchain}} fmt
+fmt:
+    cargo +{{nightly}} fmt
 
-fmt-check toolchain="+nightly":
-	cargo {{toolchain}} fmt --check
-
-lint:
-	cargo clippy --tests --no-deps                        -- -D warnings
-	cargo clippy --tests --no-deps --features axum        -- -D warnings
-	cargo clippy --tests --no-deps --features axum,utoipa -- -D warnings
-
-test:
-	cargo test --all-features
+fmt-check:
+    cargo +{{nightly}} fmt --check
 
 fix:
-	cargo fix --allow-dirty --allow-staged --all-features
+	cargo fix --tests --all-features --allow-dirty --allow-staged
 
-doc toolchain="+nightly":
-	RUSTDOCFLAGS="-D warnings --cfg docsrs" cargo {{toolchain}} doc --no-deps --all-features
+lint:
+	cargo clippy --tests --no-deps                             -- -D warnings
+	cargo clippy --tests --no-deps --features axum             -- -D warnings
+	cargo clippy --tests --no-deps --features axum,axum-utoipa -- -D warnings
+
+lint-fix:
+	cargo clippy --tests --no-deps --all-features --allow-dirty --allow-staged --fix
+
+test:
+	cargo test --tests
+	cargo test --tests --features axum
+	cargo test --tests --features axum,axum-utoipa
+
+doc:
+	RUSTDOCFLAGS="-D warnings --cfg docsrs" cargo +{{nightly}} doc --no-deps --all-features
 
 all: check fmt lint test doc
