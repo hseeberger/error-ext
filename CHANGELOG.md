@@ -6,6 +6,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.1](https://github.com/hseeberger/error-ext/compare/v0.4.0...v0.4.1) - 2025-11-21
+
+### Added
+
+- revamp ([#89](https://github.com/hseeberger/error-ext/pull/89))
+
+### Other
+
+- *(deps)* bump actions/checkout from 5 to 6 ([#90](https://github.com/hseeberger/error-ext/pull/90))
+- *(deps)* bump axum from 0.8.6 to 0.8.7 ([#88](https://github.com/hseeberger/error-ext/pull/88))
+- *(deps)* bump axum from 0.8.5 to 0.8.6 ([#87](https://github.com/hseeberger/error-ext/pull/87))
+- *(deps)* bump thiserror from 2.0.16 to 2.0.17 ([#86](https://github.com/hseeberger/error-ext/pull/86))
+- *(deps)* bump axum from 0.8.4 to 0.8.5 ([#85](https://github.com/hseeberger/error-ext/pull/85))
+- *(deps)* bump anyhow from 1.0.99 to 1.0.100 ([#84](https://github.com/hseeberger/error-ext/pull/84))
+- *(deps)* bump thiserror from 2.0.15 to 2.0.16 ([#83](https://github.com/hseeberger/error-ext/pull/83))
+- *(deps)* bump thiserror from 2.0.14 to 2.0.15 ([#82](https://github.com/hseeberger/error-ext/pull/82))
+- *(deps)* bump anyhow from 1.0.98 to 1.0.99 ([#81](https://github.com/hseeberger/error-ext/pull/81))
+- *(deps)* bump thiserror from 2.0.12 to 2.0.14 ([#80](https://github.com/hseeberger/error-ext/pull/80))
+- *(deps)* bump actions/checkout from 4 to 5 ([#79](https://github.com/hseeberger/error-ext/pull/79))
+- *(deps)* bump utoipa from 5.3.1 to 5.4.0 ([#78](https://github.com/hseeberger/error-ext/pull/78))
+
 ## [0.4.0](https://github.com/hseeberger/error-ext/compare/v0.3.0...v0.4.0) - 2025-04-11
 
 ### Added
