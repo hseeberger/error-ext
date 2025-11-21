@@ -1,8 +1,8 @@
 [package]
 name          = "error-ext"
 version       = "0.4.0"
+description   = "Error utilities"
 edition       = "2024"
-description   = "Error utilities."
 authors       = [ "Heiko Seeberger <git@heikoseeberger.de>" ]
 license-file  = "LICENSE"
 readme        = "README.md"
@@ -23,5 +23,5 @@ anyhow    = { version = "1.0" }
 thiserror = { version = "2.0" }
 
 [features]
-axum   = [ "dep:axum" ]
-utoipa = [ "axum", "dep:utoipa" ]
+axum        = [ "dep:axum" ]
+axum-utoipa = [ "axum", "dep:utoipa" ]
