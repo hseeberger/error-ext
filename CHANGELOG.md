@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.3](https://github.com/hseeberger/error-ext/compare/v0.4.2...v0.4.3) - 2025-11-24
+
+### Other
+
+- *(deps)* bump taiki-e/install-action from 2.62.54 to 2.62.56 ([#96](https://github.com/hseeberger/error-ext/pull/96))
+
 ## [0.4.2](https://github.com/hseeberger/error-ext/compare/v0.4.1...v0.4.2) - 2025-11-21
 
 ### Added
