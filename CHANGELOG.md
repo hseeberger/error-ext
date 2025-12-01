@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.3](https://github.com/hseeberger/error-ext/compare/v0.4.2...v0.4.3) - 2025-12-01
+
+### Other
+
+- *(deps)* bump taiki-e/install-action from 2.62.59 to 2.62.60 ([#104](https://github.com/hseeberger/error-ext/pull/104))
+- *(deps)* bump taiki-e/install-action from 2.62.58 to 2.62.59 ([#103](https://github.com/hseeberger/error-ext/pull/103))
+- *(deps)* bump Swatinem/rust-cache from 2.8.1 to 2.8.2 ([#101](https://github.com/hseeberger/error-ext/pull/101))
+- *(deps)* bump taiki-e/install-action from 2.62.56 to 2.62.58 ([#100](https://github.com/hseeberger/error-ext/pull/100))
+- *(deps)* bump taiki-e/install-action from 2.62.54 to 2.62.56 ([#96](https://github.com/hseeberger/error-ext/pull/96))
+
 ## [0.4.2](https://github.com/hseeberger/error-ext/compare/v0.4.1...v0.4.2) - 2025-11-21
 
 ### Added
