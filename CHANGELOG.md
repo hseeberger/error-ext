@@ -6,6 +6,47 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.3](https://github.com/hseeberger/error-ext/compare/v0.4.2...v0.4.3) - 2026-01-21
+
+### Other
+
+- *(deps)* bump taiki-e/install-action from 2.66.7 to 2.67.2 ([#140](https://github.com/hseeberger/error-ext/pull/140))
+- *(deps)* bump thiserror from 2.0.17 to 2.0.18 ([#137](https://github.com/hseeberger/error-ext/pull/137))
+- *(deps)* bump taiki-e/install-action from 2.66.5 to 2.66.7 ([#138](https://github.com/hseeberger/error-ext/pull/138))
+- *(deps)* bump MarcoIeni/release-plz-action from 0.5.120 to 0.5.121 ([#136](https://github.com/hseeberger/error-ext/pull/136))
+- *(deps)* bump taiki-e/install-action from 2.66.4 to 2.66.5 ([#135](https://github.com/hseeberger/error-ext/pull/135))
+- *(deps)* bump taiki-e/install-action from 2.66.3 to 2.66.4 ([#134](https://github.com/hseeberger/error-ext/pull/134))
+- *(deps)* bump taiki-e/install-action from 2.66.2 to 2.66.3 ([#133](https://github.com/hseeberger/error-ext/pull/133))
+- *(deps)* bump taiki-e/install-action from 2.66.1 to 2.66.2 ([#132](https://github.com/hseeberger/error-ext/pull/132))
+- *(deps)* bump taiki-e/install-action from 2.65.15 to 2.66.1 ([#131](https://github.com/hseeberger/error-ext/pull/131))
+- *(deps)* bump taiki-e/install-action from 2.65.13 to 2.65.15 ([#130](https://github.com/hseeberger/error-ext/pull/130))
+- *(deps)* bump taiki-e/install-action from 2.65.11 to 2.65.13 ([#129](https://github.com/hseeberger/error-ext/pull/129))
+- *(deps)* bump taiki-e/install-action from 2.65.10 to 2.65.11 ([#128](https://github.com/hseeberger/error-ext/pull/128))
+- *(deps)* bump taiki-e/install-action from 2.65.8 to 2.65.10 ([#127](https://github.com/hseeberger/error-ext/pull/127))
+- *(deps)* bump taiki-e/install-action from 2.65.6 to 2.65.8 ([#126](https://github.com/hseeberger/error-ext/pull/126))
+- *(deps)* bump taiki-e/install-action from 2.65.3 to 2.65.6 ([#125](https://github.com/hseeberger/error-ext/pull/125))
+- *(deps)* bump taiki-e/install-action from 2.65.2 to 2.65.3 ([#124](https://github.com/hseeberger/error-ext/pull/124))
+- *(deps)* bump taiki-e/install-action from 2.65.1 to 2.65.2 ([#123](https://github.com/hseeberger/error-ext/pull/123))
+- *(deps)* bump axum from 0.8.7 to 0.8.8 ([#122](https://github.com/hseeberger/error-ext/pull/122))
+- *(deps)* bump taiki-e/install-action from 2.64.2 to 2.65.1 ([#121](https://github.com/hseeberger/error-ext/pull/121))
+- *(deps)* bump taiki-e/install-action from 2.64.0 to 2.64.2 ([#120](https://github.com/hseeberger/error-ext/pull/120))
+- *(deps)* bump taiki-e/install-action from 2.63.3 to 2.64.0 ([#119](https://github.com/hseeberger/error-ext/pull/119))
+- *(deps)* bump dtolnay/rust-toolchain ([#118](https://github.com/hseeberger/error-ext/pull/118))
+- *(deps)* bump taiki-e/install-action from 2.62.67 to 2.63.3 ([#117](https://github.com/hseeberger/error-ext/pull/117))
+- *(deps)* bump taiki-e/install-action from 2.62.66 to 2.62.67 ([#116](https://github.com/hseeberger/error-ext/pull/116))
+- *(deps)* bump Rust to 1.92.0 ([#115](https://github.com/hseeberger/error-ext/pull/115))
+- *(deps)* bump taiki-e/install-action from 2.62.65 to 2.62.66 ([#114](https://github.com/hseeberger/error-ext/pull/114))
+- *(deps)* bump taiki-e/install-action from 2.62.62 to 2.62.65 ([#112](https://github.com/hseeberger/error-ext/pull/112))
+- *(deps)* bump MarcoIeni/release-plz-action from 0.5.118 to 0.5.120 ([#109](https://github.com/hseeberger/error-ext/pull/109))
+- *(deps)* bump taiki-e/install-action from 2.62.61 to 2.62.62 ([#108](https://github.com/hseeberger/error-ext/pull/108))
+- *(deps)* bump taiki-e/install-action from 2.62.60 to 2.62.61 ([#106](https://github.com/hseeberger/error-ext/pull/106))
+- *(deps)* bump actions/checkout from 6.0.0 to 6.0.1 ([#105](https://github.com/hseeberger/error-ext/pull/105))
+- *(deps)* bump taiki-e/install-action from 2.62.59 to 2.62.60 ([#104](https://github.com/hseeberger/error-ext/pull/104))
+- *(deps)* bump taiki-e/install-action from 2.62.58 to 2.62.59 ([#103](https://github.com/hseeberger/error-ext/pull/103))
+- *(deps)* bump Swatinem/rust-cache from 2.8.1 to 2.8.2 ([#101](https://github.com/hseeberger/error-ext/pull/101))
+- *(deps)* bump taiki-e/install-action from 2.62.56 to 2.62.58 ([#100](https://github.com/hseeberger/error-ext/pull/100))
+- *(deps)* bump taiki-e/install-action from 2.62.54 to 2.62.56 ([#96](https://github.com/hseeberger/error-ext/pull/96))
+
 ## [0.4.2](https://github.com/hseeberger/error-ext/compare/v0.4.1...v0.4.2) - 2025-11-21
 
 ### Added
