@@ -6,6 +6,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.4](https://github.com/hseeberger/error-ext/compare/v0.4.3...v0.4.4) - 2026-04-27
+
+### Other
+
+- remove dev container support ([#201](https://github.com/hseeberger/error-ext/pull/201))
+- *(deps)* bump taiki-e/install-action in the all group ([#199](https://github.com/hseeberger/error-ext/pull/199))
+- *(deps)* bump axum from 0.8.8 to 0.8.9 in the all group ([#198](https://github.com/hseeberger/error-ext/pull/198))
+- add dev container support ([#197](https://github.com/hseeberger/error-ext/pull/197))
+- *(deps)* bump taiki-e/install-action in the all group ([#196](https://github.com/hseeberger/error-ext/pull/196))
+- *(deps)* update Rust to 1.94.1 ([#195](https://github.com/hseeberger/error-ext/pull/195))
+- *(deps)* bump Rust to 1.94.0
+- *(deps)* bump dtolnay/rust-toolchain in the all group ([#193](https://github.com/hseeberger/error-ext/pull/193))
+- *(ci)* add cooldown to dependabot
+- *(deps)* bump taiki-e/install-action from 2.69.10 to 2.69.12 ([#191](https://github.com/hseeberger/error-ext/pull/191))
+- *(deps)* bump taiki-e/install-action from 2.69.9 to 2.69.10 ([#190](https://github.com/hseeberger/error-ext/pull/190))
+- add CODEOWNERS ([#189](https://github.com/hseeberger/error-ext/pull/189))
+- *(deps)* bump taiki-e/install-action from 2.69.7 to 2.69.9 ([#188](https://github.com/hseeberger/error-ext/pull/188))
+- *(deps)* bump taiki-e/install-action from 2.69.6 to 2.69.7 ([#187](https://github.com/hseeberger/error-ext/pull/187))
+- *(deps)* bump taiki-e/install-action from 2.69.2 to 2.69.6 ([#186](https://github.com/hseeberger/error-ext/pull/186))
+- *(deps)* bump taiki-e/install-action from 2.68.36 to 2.69.2 ([#185](https://github.com/hseeberger/error-ext/pull/185))
+- *(deps)* bump taiki-e/install-action from 2.68.35 to 2.68.36 ([#184](https://github.com/hseeberger/error-ext/pull/184))
+- *(deps)* bump taiki-e/install-action from 2.68.34 to 2.68.35 ([#183](https://github.com/hseeberger/error-ext/pull/183))
+- *(deps)* bump taiki-e/install-action from 2.68.33 to 2.68.34 ([#182](https://github.com/hseeberger/error-ext/pull/182))
+- *(deps)* bump taiki-e/install-action from 2.68.27 to 2.68.33 ([#181](https://github.com/hseeberger/error-ext/pull/181))
+- *(deps)* bump taiki-e/install-action from 2.68.26 to 2.68.27 ([#179](https://github.com/hseeberger/error-ext/pull/179))
+- *(deps)* bump Swatinem/rust-cache from 2.8.2 to 2.9.1 ([#178](https://github.com/hseeberger/error-ext/pull/178))
+- *(deps)* bump taiki-e/install-action from 2.68.25 to 2.68.26 ([#176](https://github.com/hseeberger/error-ext/pull/176))
+
 ## [0.4.3](https://github.com/hseeberger/error-ext/compare/v0.4.2...v0.4.3) - 2026-03-09
 
 ### Other
