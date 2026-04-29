@@ -7,14 +7,14 @@ check:
 	cargo check --tests --features axum
 	cargo check --tests --features axum,axum-utoipa
 
+fix:
+	cargo fix --tests --all-features --allow-dirty --allow-staged
+
 fmt:
     cargo +{{nightly}} fmt
 
 fmt-check:
     cargo +{{nightly}} fmt --check
-
-fix:
-	cargo fix --tests --all-features --allow-dirty --allow-staged
 
 lint:
 	cargo clippy --tests --no-deps                             -- -D warnings
