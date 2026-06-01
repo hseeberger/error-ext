@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.5](https://github.com/hseeberger/error-ext/compare/v0.4.4...v0.4.5) - 2026-06-01
+
+### Other
+
+- bump rustfmt edition to 2024 ([#216](https://github.com/hseeberger/error-ext/pull/216))
+
 ## [0.4.4](https://github.com/hseeberger/error-ext/compare/v0.4.3...v0.4.4) - 2026-05-29
 
 ### Other
