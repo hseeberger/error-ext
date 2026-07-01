@@ -6,6 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.5](https://github.com/hseeberger/error-ext/compare/v0.4.4...v0.4.5) - 2026-07-01
+
+### Other
+
+- *(deps)* bump dtolnay/rust-toolchain
+- *(deps)* bump MarcoIeni/release-plz-action in the ci-patches group
+- align workflows
+- *(deps)* bump the all group with 3 updates ([#221](https://github.com/hseeberger/error-ext/pull/221))
+- *(deps)* bump the all group with 2 updates ([#220](https://github.com/hseeberger/error-ext/pull/220))
+- *(deps)* bump the all group with 2 updates ([#219](https://github.com/hseeberger/error-ext/pull/219))
+- *(deps)* bump taiki-e/install-action in the all group ([#218](https://github.com/hseeberger/error-ext/pull/218))
+- bump rustfmt edition to 2024 ([#216](https://github.com/hseeberger/error-ext/pull/216))
+
 ## [0.4.4](https://github.com/hseeberger/error-ext/compare/v0.4.3...v0.4.4) - 2026-05-29
 
 ### Other
