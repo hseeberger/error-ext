@@ -6,6 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.6](https://github.com/hseeberger/error-ext/compare/v0.4.5...v0.4.6) - 2026-07-10
+
+### Other
+
+- *(deps)* bump Rust to 1.97.0
+- *(deps)* bump taiki-e/install-action in the ci-patches group
+- *(deps)* bump taiki-e/install-action in the ci-patches group
+- *(deps)* bump taiki-e/install-action in the ci-patches group
+- *(deps)* bump taiki-e/install-action
+- *(deps)* bump anyhow in the cargo-patches group
+- *(deps)* bump taiki-e/install-action in the ci-patches group
+- standardize project scaffolding and package metadata
+
 ## [0.4.5](https://github.com/hseeberger/error-ext/compare/v0.4.4...v0.4.5) - 2026-07-01
 
 ### Other
