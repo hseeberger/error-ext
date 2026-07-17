@@ -2,6 +2,8 @@
 
 //! Error utilities.
 
+#![warn(missing_docs)]
+
 #[cfg(feature = "axum")]
 #[cfg_attr(docsrs, doc(cfg(feature = "axum")))]
 pub mod axum;
