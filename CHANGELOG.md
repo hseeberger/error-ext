@@ -6,6 +6,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.7](https://github.com/hseeberger/error-ext/compare/v0.4.6...v0.4.7) - 2026-08-26
+
+### Other
+
+- *(deps)* bump taiki-e/install-action in the ci-minor group
+- *(deps)* bump Rust to 1.98.0
+- *(deps)* bump the ci-patch group across 1 directory with 2 updates
+- *(deps)* bump thiserror in the cargo-patch group
+- *(deps)* bump dtolnay/rust-toolchain
+- *(deps)* bump taiki-e/install-action in the ci-patch group
+- *(deps)* bump taiki-e/install-action in the ci-minor group
+- *(deps)* bump taiki-e/install-action
+- *(deps)* bump the cargo-patch group with 2 updates
+- group dependabot updates by semver level, run weekly
+- *(deps)* bump the ci-patches group with 2 updates
+- *(deps)* bump taiki-e/install-action in the ci-patches group
+- *(deps)* bump MarcoIeni/release-plz-action in the ci-patches group
+- *(deps)* bump taiki-e/install-action in the ci-patches group
+- turn on warnings for missing docs
+- *(deps)* bump dtolnay/rust-toolchain
+- *(deps)* bump taiki-e/install-action in the ci-patches group
+
 ## [0.4.6](https://github.com/hseeberger/error-ext/compare/v0.4.5...v0.4.6) - 2026-07-16
 
 ### Other
