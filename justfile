@@ -26,9 +26,9 @@ lint-fix:
     cargo clippy --tests --no-deps --all-features --allow-dirty --allow-staged --fix
 
 test:
-    cargo test --tests
-    cargo test --tests --features axum
-    cargo test --tests --features axum,axum-utoipa
+    cargo test
+    cargo test --features axum
+    cargo test --features axum,axum-utoipa
 
 doc:
     RUSTDOCFLAGS="-D warnings --cfg docsrs" cargo +{{ nightly }} doc --no-deps --all-features
