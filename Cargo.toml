@@ -25,3 +25,9 @@ thiserror = { version = "2.0" }
 [features]
 axum        = [ "dep:axum" ]
 axum-utoipa = [ "axum", "dep:utoipa" ]
+
+[profile.dev]
+debug = "line-tables-only"
+
+[profile.dev.package."*"]
+debug = false
