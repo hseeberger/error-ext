@@ -6,6 +6,52 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.7](https://github.com/hseeberger/error-ext/compare/v0.4.6...v0.4.7) - 2026-10-24
+
+### Fixed
+
+- *(deps)* bump tokio to 1.54.1 for RUSTSEC-2026-0386
+
+### Other
+
+- *(deps)* bump dtolnay/rust-toolchain
+- *(deps)* bump actions/create-github-app-token
+- *(deps)* bump the ci-patch group with 2 updates
+- shrink dev build output via debug profile settings
+- use --all-targets in just recipes
+- remove --tests from cargo test
+- *(deps)* bump dtolnay/rust-toolchain
+- *(deps)* bump the ci-patch group with 2 updates
+- *(deps)* bump Rust to 1.99.0
+- *(deps)* bump dtolnay/rust-toolchain
+- *(deps)* bump taiki-e/install-action
+- *(deps)* bump thiserror
+- *(deps)* bump utoipa in the cargo-major group across 1 directory
+- *(deps)* bump the ci-patch group with 2 updates
+- *(deps)* bump dtolnay/rust-toolchain
+- *(deps)* bump the ci-patch group with 2 updates
+- *(deps)* bump the ci-patch group with 2 updates
+- *(deps)* bump Rust to 1.98.1
+- *(deps)* bump taiki-e/install-action in the ci-minor group
+- *(deps)* bump taiki-e/install-action in the ci-patch group
+- *(deps)* bump taiki-e/install-action in the ci-minor group
+- *(deps)* bump Rust to 1.98.0
+- *(deps)* bump the ci-patch group across 1 directory with 2 updates
+- *(deps)* bump thiserror in the cargo-patch group
+- *(deps)* bump dtolnay/rust-toolchain
+- *(deps)* bump taiki-e/install-action in the ci-patch group
+- *(deps)* bump taiki-e/install-action in the ci-minor group
+- *(deps)* bump taiki-e/install-action
+- *(deps)* bump the cargo-patch group with 2 updates
+- group dependabot updates by semver level, run weekly
+- *(deps)* bump the ci-patches group with 2 updates
+- *(deps)* bump taiki-e/install-action in the ci-patches group
+- *(deps)* bump MarcoIeni/release-plz-action in the ci-patches group
+- *(deps)* bump taiki-e/install-action in the ci-patches group
+- turn on warnings for missing docs
+- *(deps)* bump dtolnay/rust-toolchain
+- *(deps)* bump taiki-e/install-action in the ci-patches group
+
 ## [0.4.6](https://github.com/hseeberger/error-ext/compare/v0.4.5...v0.4.6) - 2026-07-16
 
 ### Other
