@@ -5,7 +5,6 @@ version       = "0.4.6"
 edition       = "2024"
 license       = "Apache-2.0"
 readme        = "README.md"
-homepage      = "https://github.com/hseeberger/error-ext"
 repository    = "https://github.com/hseeberger/error-ext"
 documentation = "https://docs.rs/error-ext/latest/error_ext/"
 publish       = true
