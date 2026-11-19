@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1](https://github.com/hseeberger/error-ext/compare/v0.5.0...v0.5.1) - 2026-11-19
+
+### Documentation
+
+- Regenerate changelogs with the unified config ([#316](https://github.com/hseeberger/error-ext/pull/316))
+
+
 ## [0.5.0](https://github.com/hseeberger/error-ext/compare/v0.4.6...v0.5.0) - 2026-11-18
 
 ### Bug Fixes
